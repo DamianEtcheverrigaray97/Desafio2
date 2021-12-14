@@ -1,9 +1,13 @@
 import './App.css';
 import Navbar from './components/NavBar';
+import ItemCount from './components/ItemCount';
 
 function App() {
   return (
-    <Navbar />
+    <div>
+        <Navbar />
+        <ItemCount />
+    </div>
   )
 }
 

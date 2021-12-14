@@ -1,0 +1,25 @@
+.product img{
+    display: flex;
+    width: 100%;
+}
+.product1{
+    display: flex;
+}
+
+.countProduct1{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product{
+    width: 400px;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.productName h1{
+    font-size: 20px;
+    text-align: center;
+}
