@@ -9,8 +9,10 @@
 .countProduct1{
     display: flex;
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    width: 130px;
+    margin: 0 auto;
 }
 
 .product{
@@ -22,4 +24,16 @@
 .productName h1{
     font-size: 20px;
     text-align: center;
+}
+
+.stock{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.addCar{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
