@@ -12,3 +12,11 @@
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 3rem;
 }
+
+.logo_header{
+    width: 55%;
+}
+
+.bg-dark {
+    background-color: black!important;
+}
