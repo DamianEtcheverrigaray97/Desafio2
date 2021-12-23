@@ -3,13 +3,16 @@ import './../components/NavBar.css';
 import CartWidget from './../components/CartWidget';
 import ItemListContainer from "./ItemListContainer";
 import logo_header from './../img/logo_header.png';
+import {Link, NavLink} from "react-router-dom"
 
 function Navbar() {
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbarPrincipal">
             <div className="container-fluid">
                 <a className="navbar-brand title_nav" href="#"> 
-                <img class="logo_header" src={logo_header}></img>
+                <NavLink to="/">
+                    <img class="logo_header" src={logo_header}></img>
+                </NavLink>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -21,13 +24,10 @@ function Navbar() {
                                 Categorias
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">COMPONENTES</a></li>
-                                <li><a className="dropdown-item" href="#">COMPUTADORAS</a></li>
-                                <li><a className="dropdown-item" href="#">ELECTRONICA</a></li>
-                                <li><a className="dropdown-item" href="#">GAMERS</a></li>
-                                <li><a className="dropdown-item" href="#">OFICINA/HOGAR</a></li>
-                                <li><a className="dropdown-item" href="#">OPORTUNIDADES</a></li>
-                                <li><a className="dropdown-item" href="#">REDES/ADAPTADORES</a></li>
+                                <li><a className="dropdown-item" href="/category/Computadoras">COMPUTADORAS DE ESCRITORIO</a></li>
+                                <li><a className="dropdown-item" href="/category/Almacenamiento">ALMACENAMIENTO</a></li>
+                                <li><a className="dropdown-item" href="/category/Gabinetes">GABINETES</a></li>
+                                <li><a className="dropdown-item" href="/category/Procesadores">PROCESADORES</a></li>
                             </ul>
                         </li>
                         <li className="nav-item">
