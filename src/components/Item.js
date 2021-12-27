@@ -16,7 +16,7 @@ const Item = props => {
                     <h5 class="card-title">{props.nameProduct}</h5>
                     <p class="card-text">PRECIO USD: {props.precio}</p>
                     <p class="card-text">STOCK: {props.stock}</p>
-                    <p class="card-text"><ItemsCount/></p>
+                    {/* <p class="card-text"><ItemsCount/></p> */}
                     <p class="btn btn-outline-info">
                         <Link to={`/item/`+props.id}>
                             Detalle del producto
