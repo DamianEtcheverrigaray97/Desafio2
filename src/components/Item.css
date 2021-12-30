@@ -17,6 +17,10 @@
     margin-bottom: 20px;
     background-color: #f7f7f7!important;
 }
+a {
+    color: #ffffff!important;
+    text-decoration: none!important;
+}
 
 .fa-times:before {
     content: "\f00d";

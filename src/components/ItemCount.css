@@ -16,7 +16,24 @@
 }
 
 .product{
-    width: 100%
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.product .continueBuying{
+    margin-left: 50px;
+}
+
+.product .btn a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.product .btn{
+    text-decoration: none;
 }
 
 .productName h1{
