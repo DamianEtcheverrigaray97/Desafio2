@@ -7,22 +7,25 @@ import Footer from './components/Footer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Banner from "./components/Banner";
 import Cart from "./components/Cart";
+import CustomProvider from "./components/Context";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Banner />
-      <Routes>
-        <Route path="/" element={<ItemListContainer/>}/>
-        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-        <Route path="/category/:id" element={<ItemListContainer/>}/>
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="*"/>
-      </Routes>
 
-      <Footer />
-    </BrowserRouter>
+  return (
+    <CustomProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Banner />
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+          <Route path="/category/:id" element={<ItemListContainer/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="*"/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CustomProvider>
   );
 };
 

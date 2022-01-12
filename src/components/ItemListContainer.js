@@ -15,7 +15,6 @@ const ItemListContainer = () => {
     let [list, setList] = useState([]) 
 
     const {id} = useParams();
-    console.log(id);
 
     useEffect(()=>{
         const promesa = new Promise((res,rej)=>{

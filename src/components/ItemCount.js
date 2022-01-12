@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ItemCount = ({stockInitial, initial, onAdd}) => {
+const ItemCount = ({stockInitial, product, initial, onAdd}) => {
     console.log("stockInitial "+ stockInitial);
     console.log("initial "+initial);
     const [count, setCount] = useState(initial);
@@ -33,7 +33,7 @@ const ItemCount = ({stockInitial, initial, onAdd}) => {
 
     const agregarItem = () =>{
         setCount(initial);
-        onAdd(count);
+        onAdd(count, product);
         setCheck(false);
         notify();
     }
