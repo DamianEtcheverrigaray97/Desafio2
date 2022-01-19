@@ -1,0 +1,54 @@
+.product img{
+    display: flex;
+    width: 100%;
+}
+.product1{
+    display: flex;
+}
+
+.countProduct1{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.product{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.product .continueBuying{
+    margin-left: 50px;
+}
+
+.product .btn a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.product .btn{
+    text-decoration: none;
+}
+
+.productName h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.stock{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.addCar{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

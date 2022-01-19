@@ -1,0 +1,32 @@
+.card-img, .card-img-top {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card{
+    margin-left: 20px;
+    width: 400px;
+    height: 660px;
+    margin-bottom: 20px;
+    background-color: #f7f7f7!important;
+}
+a {
+    color: #ffffff!important;
+    text-decoration: none!important;
+}
+
+.fa-times:before {
+    content: "\f00d";
+    COLOR: #979797;
+    font-size: 30px;
+    /* padding-top: 20px; */
+    /* margin-top: 30px; */
+    margin-left: 6px;
+}
