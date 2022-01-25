@@ -1,35 +1,45 @@
 import React from "react";
+import { useState , useEffect } from "react";
 import { CartContext } from "./Context.js";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { createContext , useState } from "react";
-
-import BFXK55RGB from './../img/BFXK55RGB.jpg';
-import BFXTTF100 from './../img/BFXTTF100.jpg';
-import BFXTTG102 from './../img/BFXTTG102.jpg';
-import BFXPCINTEL100 from './../img/BFXPCINTEL100.jpg';
-import BFXIN809 from './../img/BFXIN809.jpg';
-import BFXGBM71 from './../img/BFXGBM71.jpg';
-import BFXDEG01 from './../img/BFXDEG01.jpg';
-import BFXAMP98 from './../img/BFXAMP98.jpg';
 import './../components/Cart.css';
+import { addDoc, collection, serverTimestamp} from "firebase/firestore"
+import { db } from "../configure/firebase";
 
 const  Cart  = () =>{
 
-    const { cart, totalPrice, delFromCart, emptyCart } = useContext(CartContext);
+    const { cart, delFromCart, emptyCart } = useContext(CartContext);
+    let resume = 0;
 
     const commitSale = () => {
+        console.log("Guardando la compra en la db...");
 
+        const ventasCollection = collection(db,"ventas")
+        addDoc(ventasCollection,{
+            buyer : {
+                name : "Damian",
+                lastName : "Etcheverrigaray",
+                email : "Damian.etcheverrigaray@gmail.com"
+            },
+            items: cart,
+            date: serverTimestamp(),
+            total: resume
+        })
+        .then((resultado)=>{
+            console.log(resultado)
+        })
+        emptyCart()
     }
 
     if (cart.length > 0) {
         let priceTotal = 0;
-        let total = 0;
         let resumePrice = 0;
         cart.map((prod) => {
             priceTotal = prod.quantity * prod.precio;
             resumePrice = priceTotal + resumePrice;
         })
+        resume = resumePrice;
         return(
             <div className="container_">
                 <div>
@@ -62,12 +72,12 @@ const  Cart  = () =>{
     }else {
         return (
             <div className="mt">
-              <p>Cart is empty</p>
-              <Link to="/">
-                <button>Return to HOME</button>
-              </Link>
+                <p>Cart is empty</p>
+                <Link to="/">
+                    <button>Return to HOME</button>
+                </Link>
             </div>
-          );
+        );
     }
 }
 

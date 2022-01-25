@@ -2,6 +2,7 @@
     color: white;
     font-size: 24px;
     margin-right: 30px;
+    margin-left: 10px;
 }
 
 .title_nav{
@@ -17,6 +18,14 @@
     width: 55%;
 }
 
-.bg-dark {
+.navbar {
     background-color: black!important;
+}
+.dropdown-menu{
+    background-color: black!important;
+}
+
+.navbar-text{
+    display: flex;
+    justify-content: center;
 }

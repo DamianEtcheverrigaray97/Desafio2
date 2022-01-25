@@ -18,30 +18,29 @@ const CustomProvider = ({children}) => {
         const cartCopy = [...cart];
         cartCopy.splice(i, 1);
         setCart(cartCopy);
-      };
+    };
 
 
     function agregarAlCarrito(product, quantity) {
-        if (isInCart(product)) {
-            let cartCopy = [...cart];
-            let found = cartCopy.find((prod) => prod.id === product.id);
-            let oldQuantity = found.quantity;
-            found.quantity = quantity;
-            setCart(cartCopy);
-            setTotalQuant(totalQuant + quantity - oldQuantity);
-          } else {
+        // if (isInCart(product)) {
+        //     let cartCopy = [...cart];
+        //     let found = cartCopy.find((prod) => prod.id === product.id);
+        //     let oldQuantity = found.quantity;
+        //     found.quantity = quantity;
+        //     setCart(cartCopy);
+        //     setTotalQuant(totalQuant + quantity - oldQuantity);
+        //   } else {
             product.quantity = quantity;
             setCart([...cart, product]);
             setTotalQuant(totalQuant + quantity);
-          }
+          // }
           setTotalPrice(totalPrice + quantity * product.price);
-          
     }
     const emptyCart = () => {
         setCart([]);
         setTotalQuant(0);
         setTotalPrice(0);
-      };
+    };
 
     const isInCart = (product) => cart.find((prod) => prod.id === product.id);
 

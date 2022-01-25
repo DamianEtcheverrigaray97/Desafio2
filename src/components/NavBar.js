@@ -7,7 +7,7 @@ import {Link, NavLink} from "react-router-dom"
 
 function Navbar() {
     return(
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbarPrincipal">
+        <nav className="navbar navbar-expand-lg navbar-dark navbarPrincipal">
             <div className="container-fluid">
                 <a className="navbar-brand title_nav" href="#"> 
                 <NavLink to="/">
@@ -23,7 +23,7 @@ function Navbar() {
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                                 <li><a className="dropdown-item" href="/category/Computadoras">COMPUTADORAS DE ESCRITORIO</a></li>
                                 <li><a className="dropdown-item" href="/category/Almacenamiento">ALMACENAMIENTO</a></li>
                                 <li><a className="dropdown-item" href="/category/Gabinetes">GABINETES</a></li>
