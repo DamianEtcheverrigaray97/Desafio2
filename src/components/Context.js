@@ -8,11 +8,11 @@ const CustomProvider = ({children}) => {
     const [totalQuant, setTotalQuant] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
-    const delFromCart = (id) => {
-        const deleting = cart.find((prod) => prod.id === id);
+    const delFromCart = (ide) => {
+        const deleting = cart.find((prod) => prod.ide === ide);
         const i = cart.indexOf(deleting, 0);
         const restQ = cart[i].quantity;
-        const restP = cart[i].price * restQ;
+        const restP = cart[i].precio * restQ;
         setTotalQuant(totalQuant - restQ);
         setTotalPrice(totalPrice - restP);
         const cartCopy = [...cart];
@@ -20,21 +20,21 @@ const CustomProvider = ({children}) => {
         setCart(cartCopy);
     };
 
-
     function agregarAlCarrito(product, quantity) {
-        // if (isInCart(product)) {
-        //     let cartCopy = [...cart];
-        //     let found = cartCopy.find((prod) => prod.id === product.id);
-        //     let oldQuantity = found.quantity;
-        //     found.quantity = quantity;
-        //     setCart(cartCopy);
-        //     setTotalQuant(totalQuant + quantity - oldQuantity);
-        //   } else {
+        if (isInCart(product)) {
+            let cartCopy = [...cart];
+            let found = cartCopy.find((prod) => prod.ide === product.ide);
+            let oldQuantity = found.quantity;
+            found.quantity = quantity;
+            setCart(cartCopy);
+            setTotalQuant(totalQuant + quantity - oldQuantity);
+        } else {
             product.quantity = quantity;
             setCart([...cart, product]);
             setTotalQuant(totalQuant + quantity);
-          // }
-          setTotalPrice(totalPrice + quantity * product.price);
+        }
+        const precio = product.precio * quantity;
+        setTotalPrice(totalPrice + precio); 
     }
     const emptyCart = () => {
         setCart([]);
@@ -42,7 +42,7 @@ const CustomProvider = ({children}) => {
         setTotalPrice(0);
     };
 
-    const isInCart = (product) => cart.find((prod) => prod.id === product.id);
+    const isInCart = (product) => cart.find((prod) => prod.ide === product.ide);
 
     const valorDelContexto = {
         cart,
@@ -52,7 +52,6 @@ const CustomProvider = ({children}) => {
         delFromCart,
         emptyCart
     }
-
     return(
         <CartContext.Provider value={valorDelContexto}>
             {children}

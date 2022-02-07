@@ -1,68 +1,42 @@
 import React from "react";
-import { useState , useEffect } from "react";
 import { CartContext } from "./Context.js";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import './../components/Cart.css';
-import { addDoc, collection, serverTimestamp} from "firebase/firestore"
-import { db } from "../configure/firebase";
 
+import PaymentForms from "../components/Payments/PaymentForms";
 const  Cart  = () =>{
 
-    const { cart, delFromCart, emptyCart } = useContext(CartContext);
-    let resume = 0;
-
-    const commitSale = () => {
-        console.log("Guardando la compra en la db...");
-
-        const ventasCollection = collection(db,"ventas")
-        addDoc(ventasCollection,{
-            buyer : {
-                name : "Damian",
-                lastName : "Etcheverrigaray",
-                email : "Damian.etcheverrigaray@gmail.com"
-            },
-            items: cart,
-            date: serverTimestamp(),
-            total: resume
-        })
-        .then((resultado)=>{
-            console.log(resultado)
-        })
-        emptyCart()
-    }
+    const { cart, totalPrice, delFromCart, emptyCart } = useContext(CartContext);
 
     if (cart.length > 0) {
-        let priceTotal = 0;
-        let resumePrice = 0;
-        cart.map((prod) => {
-            priceTotal = prod.quantity * prod.precio;
-            resumePrice = priceTotal + resumePrice;
-        })
-        resume = resumePrice;
         return(
             <div className="container_">
-                <div>
-                    <h1>Precio Total de la compra: {resumePrice}</h1>
-                    <button onClick={commitSale}>Finalizar compra</button>{" "}
-                    <button onClick={emptyCart}>Vaciar Carrito</button>
+                <div className="container_cart">
+                    <h1 className="container_cart_title">Precio Total de la compra: {totalPrice} USD</h1>
+                    <div className="payment">
+                        <PaymentForms />
+                    </div>
+                    <button className="container_cart_buttom2" type="button" class="btn btn-secondary" onClick={emptyCart}>Vaciar Carrito</button>
                 </div>
                 <div className="cards">
                     { cart.map((prod) => {
                         const priceTotal = prod.quantity * prod.precio;
 
                         return (
-                            <div key={"cart" + prod.id} className="cartItem">
-                                <img class="card-img-top" src={prod.img} alt="Card image cap"></img>
-                                <div class="card-body">
-                                <h5 class="card-title">{prod.nameProduct}</h5>
-                                    <p class="card-text">Price Unit (USD): {prod.precio}</p>
-                                    <p>Quantity: {prod.quantity}</p>    
-                                    <p>Total Price: {priceTotal}</p>       
+                            <div>
+                                <div key={"cart" + prod.id} className="cartItem">
+                                    <img class="cart-img-top" src={prod.img} alt="Card image cap"></img>
+                                    <div class="cart-body">
+                                    <h5 class="cart-title">{prod.nameProduct}</h5>
+                                        <p class="cart-text">Price Unit (USD): {prod.precio}</p>
+                                        <p>Quantity: {prod.quantity}</p>    
+                                        <p>Total Price: {priceTotal}</p>       
+                                    </div>
+                                    <button class="btn btn-danger" onClick={(e) => { delFromCart(prod.ide); }}>
+                                    <i class="far fa-trash-alt"></i>
+                                    </button>
                                 </div>
-                                <button onClick={(e) => { delFromCart(prod.id); }}>
-                                    Delete Item
-                                </button>
                             </div>
                         );
                     })}
@@ -72,9 +46,9 @@ const  Cart  = () =>{
     }else {
         return (
             <div className="mt">
-                <p>Cart is empty</p>
+                <h1>Cart is empty</h1>
                 <Link to="/">
-                    <button>Return to HOME</button>
+                    <button class="btn btn-primary">Return to HOME</button>
                 </Link>
             </div>
         );

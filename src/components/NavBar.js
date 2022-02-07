@@ -1,9 +1,8 @@
 import React from "react";
 import './../components/NavBar.css';
 import CartWidget from './../components/CartWidget';
-import ItemListContainer from "./ItemListContainer";
 import logo_header from './../img/logo_header.png';
-import {Link, NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 function Navbar() {
     return(
@@ -19,28 +18,54 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorias
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#">
+                            <NavLink to="/category/Computadoras">
+                                COMPUTADORAS DE ESCRITORIO
+                            </NavLink>
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                                <li><a className="dropdown-item" href="/category/Computadoras">COMPUTADORAS DE ESCRITORIO</a></li>
-                                <li><a className="dropdown-item" href="/category/Almacenamiento">ALMACENAMIENTO</a></li>
-                                <li><a className="dropdown-item" href="/category/Gabinetes">GABINETES</a></li>
-                                <li><a className="dropdown-item" href="/category/Procesadores">PROCESADORES</a></li>
-                            </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Nosotros</a>
+                            <a className="nav-link active" aria-current="page" href="#">
+                            <NavLink to="/category/Almacenamiento">
+                                ALMACENAMIENTO
+                            </NavLink>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Cambios y garantias</a>
+                            <a className="nav-link active" aria-current="page" href="#">
+                            <NavLink to="/category/Gabinetes">
+                                GABINETES
+                            </NavLink>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Centro de ayuda</a>
+                            <a className="nav-link active" aria-current="page" href="#">
+                            <NavLink to="/category/Procesadores">
+                                PROCESADORES
+                            </NavLink>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contacto</a>
+                            <a className="nav-link active" aria-current="page" href="#">
+                            <NavLink to="/category/videoCards">
+                                TARJETAS GRAFICAS
+                            </NavLink>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="information_navbar">
+                                <a className="nav-link active" aria-current="page" href="#">
+                                <NavLink to="/we">
+                                    NOSOTROS
+                                </NavLink>
+                                </a>
+                                <a className="nav-link active" aria-current="page" href="#">
+                                <NavLink to="/warranty">
+                                    CAMBIOS Y GARANTIAS
+                                </NavLink>
+                                </a>
                         </li>
                     </ul>
                     <span className="navbar-text">

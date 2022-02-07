@@ -1,5 +1,5 @@
 .card-img, .card-img-top {
-    width: 270px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -12,14 +12,23 @@
 
 .card{
     margin-left: 20px;
-    width: 310px;
-    height: 510px;
+    width: 400px;
+    height: 610px;
     margin-bottom: 20px;
     background-color: #f7f7f7!important;
 }
 a {
     color: #ffffff!important;
     text-decoration: none!important;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-right: 70px;
+    width: 50%;
 }
 
 .fa-times:before {
@@ -29,4 +38,63 @@ a {
     /* padding-top: 20px; */
     /* margin-top: 30px; */
     margin-left: 6px;
+}
+
+.container_{
+    display: flex!important;
+    justify-content: space-evenly;
+}
+
+.cartItem{
+    margin-left: 30px;
+    width: 400px;
+    height: 600px;
+    margin-bottom: 20px;
+    background-color: white!important;
+    border-style: solid;
+    border: 1px solid;
+    border-radius: -1px;
+    padding: 32px;
+}
+.fa-trash-alt:before {
+    content: "\f2ed";
+    font-size: 21px;
+}
+.cart-img, .cart-img-top {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container_cart{
+    margin-top: 68px;
+    margin-bottom: 100px;
+    text-align: center;
+    width: 50%;
+}
+
+.container_cart_title{
+    margin-bottom: 60px;
+}
+
+.mt{
+    margin-top: 110px;
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.payment{
+    display: flex;
+    justify-content: center;
+}
+
+.card-body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHMFWh7KUtHMICZ8YiNoXzI5L5w_6EZxbSwKAU4O0yGXTYbp6-5Z7Dc_7uzZA3qq4Zk0&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-color: white;
+    background-position-y: 100px;
+    background-position-x: 213px;
+}
+#root{
+    background-color: #f5f5f5;
 }

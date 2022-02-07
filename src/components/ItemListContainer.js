@@ -1,7 +1,6 @@
 import { useState , useEffect } from "react";
 import { useParams} from "react-router-dom";
 import ItemList from "./ItemList";
-
 import { db } from "../configure/firebase";
 import { getDocs , query , collection, where} from "firebase/firestore"
 
@@ -14,7 +13,6 @@ const ItemListContainer = () => {
     useEffect(()=>{
         const productosCollection = collection(db, "productos")
         if (id!=null) {
-            console.log(id)
             const consulta = query(productosCollection,where("category","==",id))
             getDocs(consulta)
                 .then(({ docs }) => {
@@ -24,7 +22,6 @@ const ItemListContainer = () => {
                     console.log(error)
                 })
         } else {
-            console.log(id)
             getDocs(productosCollection)
                 .then(({ docs }) => {
                     setList(docs.map((doc) => ({ id: doc.id, ...doc.data() })))
@@ -41,6 +38,5 @@ const ItemListContainer = () => {
         </div>
     )
 }
-
 
 export default ItemListContainer;

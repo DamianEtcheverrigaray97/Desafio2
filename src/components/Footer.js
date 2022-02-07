@@ -15,10 +15,8 @@ const Footer = props => {
 
                 <div class="box_footer">
                     <h2>Soluciones</h2>
-                    <a href="#">CAMBIOS Y GARANTÍAS</a>
-                    <a href="#">NOSOTROS</a>
-                    <a href="#">CENTRO DE AYUDA</a>
-                    <a href="#"> TÉRMINOS Y CONDICIONES</a>
+                    <a href="/warranty">CAMBIOS Y GARANTÍAS</a>
+                    <a href="/we">NOSOTROS</a>
                 </div>
 
                 <div class="box_footer">

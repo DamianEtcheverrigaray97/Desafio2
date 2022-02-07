@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# SIMPLEPC, Importador y distribuidor de hardware en Uruguay , React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue realizado para el curso de React JS, dictado por CoderHouse.
 
-## Available Scripts
+# FUNCIONALIDADES 
 
-In the project directory, you can run:
+- Se obtienen los datos de la FireStore, servicio brindado por Google.
+- Utilizamos el sistema de componentes, para dividir responsabilidades entre si.
+- La comunicacion con el usuario se da a traves de TOAST de React. Para esto importamos los siguiente:
+    - { ToastContainer, toast } from 'react-toastify';
+    - 'react-toastify/dist/ReactToastify.css';
+- Los productos se pueden visualizar a traves de un catalogo en general, o bien, verlos por categorias.
+- El stock de productos se chequea antes de sumarlo al carrito, para evitar errores de falta de stock, a futuro trabajara con stock a tiempo real.
+- Se detalla el precio total de los elementos que se encuentran en el carrito, también existe el botón "Vaciar Carrito" para eliminar todos los elementos del carrito y dejarlo vacio.
+- Al finalizar la compra, se genera un ticket de compra el cual es registrado en FireBase, el cual en un futuro, el cliente podra buscarlo y visualizar en que proceso esta su pedido, o tambien al momento de realizar la compra el ticket puede llegar al correo electronico ingresado.
 
-### `npm start`
+# HERRAMIENTAS UTILIZADAS 
+- `HTML`
+- `CSS`
+- `JAVASCRIPT`
+- `REACT JS`
+- `FIREBASE`
+- `REACT DOM`
+- `TOAST de React`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# DEMOSTRACION
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Pagina Principal (Home):
+Se observan las Cards con los Productos disponibles, las cuales tienen la siguiente información:
+    - Nombre del Producto
+    - Precio en dolares
+    - Stock
+    - Botón para ir al detalle del producto
 
-### `npm test`
+    <img src="./src/gift/Home.gif" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+- Filtrado por Categorias:
+En el navbar se detallan las categorias, donde al clickear se filtra los productos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    <img src="./src/gift/Filtrado-por-Categorias.gif" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Detalle del Producto, Agregar al Carrito (y control de stock), Mensaje de Aviso al agregar producto al carrito, Eliminar producto del Carrito, Datos recibidos en FireBase de las Ventas.
+    <img src="./src/gift/Detalle-de-Producto_-Compra-de-Producto_-Registro-en-FireBase-de-la-compra.gif" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Limpiar Carrito de Compras:
+    <img src="./src/gift/vaciar-carrito.gif" />
 
-### `npm run eject`
+- Paginas Complementarias: Nosotros y Cambios y Garantias.
+    <img src="./src/gift/Paginas-complementarias-_Nosotros-y-Garantias_.gif" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Excelente curso, muy contento con el resultado y con las enseñanzas adqueridas. También algo para destacar son las excelentes clases del Profesor Horacio Gutierrez y la excelente asistencia de Pato (Patricio Pallua), mi tutor, un crack.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Damián Etcheverrigaray

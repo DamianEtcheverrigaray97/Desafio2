@@ -1,0 +1,26 @@
+.imgWe{
+    margin: 0 auto;
+    align-items: center;
+    width: 58%;
+}
+
+.title{
+    text-align: center;
+    font-size: 76px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.body{
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 22px;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+}
+
